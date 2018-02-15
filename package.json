@@ -4,7 +4,7 @@
   "description": "Super Simple Template Engine",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape tests/*.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
     "engine"
   ],
   "author": "Vitor Ruivo <vruivo.code@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
 }
