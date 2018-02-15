@@ -21,10 +21,19 @@ module.exports = {
     'buildTagRegex': function buildTagRegex(tag_start, tag_end, tag_text) {
         tag_text = tag_text || '\\w+';
 
-        // regex special characters treatment (incomplete!)
-        if (tag_start[0] === '$') {
-            tag_start = '\\' + tag_start;
-        }
+        // regex special characters treatment
+        var idx_tag_start, idx_tag_end;
+        ['$', '^', '[', ']', '(', ')'].forEach(function each(char) {
+          idx_tag_start = tag_start.indexOf(char);
+          idx_tag_end = tag_end.indexOf(char);
+
+          if (idx_tag_start !== -1) {
+            tag_start = tag_start.slice(0, idx_tag_start) + '\\' + tag_start.slice(idx_tag_start);
+          }
+          if (idx_tag_end !== -1) {
+            tag_end = tag_end.slice(0, idx_tag_end) + '\\' + tag_end.slice(idx_tag_end);
+          }
+        });
 
         return new RegExp(tag_start + tag_text + tag_end, 'g');
     }

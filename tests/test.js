@@ -49,8 +49,8 @@ test('usage', function (t) {
     var t2 = sste.loadTemplate(__dirname + '/test_template2.txt');
     var t3 = sste.loadTemplate({
         'template': __dirname + '/test_template3.txt',
-        'tag_start': '#\\(',
-        'tag_end': '\\)'
+        'tag_start': '#(',
+        'tag_end': ')'
     });
 
     t.equal(t1.createFromTemplate({ 'name':'World', 'tag2':'Sunshine' }), 'Hello World !\nHello again World !!\nSunshine', 'first test');
