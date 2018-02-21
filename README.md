@@ -7,7 +7,7 @@ A simple, and synchronous, template engine aimed for server side use.
 Load a template file into a sste object using either a string (and use the default tag markings) or an object (and define your tags) as argument,
 and then pass it the values you want to populate the template with.
 
-** Using a string argument (that uses the default tags `${` and `}`) **
+**Using a string argument (that uses the default tags `${` and `}`)**
 ```javascript
 var sste = require('sste');
 
@@ -15,7 +15,7 @@ var tx = sste.loadTemplate(template_file);
 var doc = tx.createFromTemplate( {'name':'A'} );
 ```
 
-** Or an object argument **
+**Or an object argument**
 ```javascript
 var sste = require('sste');
 
@@ -28,7 +28,7 @@ var doc = tx.createFromTemplate( {'name':'A'} );
 ```
 
 ### Some examples:
-* ** Simple: **  
+* **Simple:**  
 
   template.txt
   ```
@@ -43,7 +43,7 @@ var doc = tx.createFromTemplate( {'name':'A'} );
   console.log( tx.createFromTemplate( {'name':'World!'} ) )      // >> Hello World!
   ```
 
-* ** Multiple tags: **
+* **Multiple tags:**
 
   template.txt
   ```
@@ -68,7 +68,7 @@ var doc = tx.createFromTemplate( {'name':'A'} );
   } ) );  // >> The magic ninja turtle
   ```
 
-* ** HTML, different tag markings, function for values: **  
+* **HTML, different tag markings, function for values:**  
 
   template.html
   ```
